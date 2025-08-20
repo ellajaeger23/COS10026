@@ -9,11 +9,11 @@
     </head>
 
     <body>
-        <img src="logo.png"
-             alt="Swinburne Logo"
-             title="Swiburne logo"
-             loading="lazy"
-             >
+
+        <a href="https://www.swin.edu.au">
+            <img src="logo.png" alt="swinburne logo" width="200" title="swinburne logo" loading="lazy">
+        </a>
+          
 
         <h1>CWA Help Desk Appointment</h1>
 
@@ -26,13 +26,13 @@
 
                <legend>Student Details</legend>
                <label for="Student ID">Student ID</label>
-               <input type="input" id="ID" name="ID" required>
+               <input type="input" id="ID" name="ID" pattern="\d{7,10}" required>
                <br>
                <br>
                <label for="Given Name">Given Name</label>
-               <input type="input" id="given" name="given" required>
+               <input type="input" id="given" name="given" pattern="[A-Za-z]+" maxlength="15" required>
                <label for="Family Name">Family Name</label>
-               <input for="input" id="family" name="family" required>
+               <input for="input" id="family" name="family" pattern="[A-Za-z]+" maxlength="15" required>
 
            </fieldset>
 
@@ -40,22 +40,23 @@
 
                <legend>Your Unit</legend>
                 <label for="cos10011">COS10011</label>
-                <input type="radio" id="cos10011" name="cos10011" value="cos10011">
+                <input type="radio" id="cos10011" name="unit" value="cos10011" required>
 
                 <label for="cos60004">COS60004</label>
-                <input type="radio" id="cos60004" name="cos60004" value="cos60004">
+                <input type="radio" id="cos60004" name="unit" value="cos60004">
 
                 <label for="cos60007">COS60007</label>
-                <input type="radio" id="cos60007" name="cos60007" value="cos60007">
+                <input type="radio" id="cos60007" name="unit" value="cos60007">
 
                 <br>
                 <br>
 
                 <label for="tutor">Your Tutor</label>
-                <select id="tutor" name="tutor">
-                    <option value="Nic">Nic</option>
-                    <option value="Atie">Atie</option>
-                    <option value-="my teacher">My teacher</option>
+                <select id="tutor" name="tutor" required>
+                    <option value="">Please Select</option>
+                    <option value="Nic Ortiz">Nic</option>
+                    <option value="Atie Kia">Atie</option>
+                    <option value-="Razeen Hashmi">My teacher</option>
                </select>
 
             </fieldset>
@@ -63,7 +64,7 @@
             <fieldset>
                 <legend>Issue</legend>
                  <label for="HTML">HTML</label>
-                 <input type="checkbox" name="HTML">
+                 <input type="checkbox" name="HTML" checked>
                  <label for="CSS">CSS</label>
                  <input type="checkbox" name="CSS">
                  <label for="JavaScript">JavaScript</label>
@@ -87,15 +88,15 @@
                 <legend>Preferred Date/Time</legend>
 
                 <label for="date">Date</label>
-                <input type="text" name="date" id="date" placeholder="dd/mm/yyyy">
+                <input type="text" name="date" id="date" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}">
                 <br>
                 <br>
                 <label for="time">Time</label>
-                <input type="text" name="time" id="time" placeholder="00:00">
+                <input type="text" name="time" id="time" placeholder="00:00"pattern="^([01]\d|2[0-3]):[0-5]\d$">
 
             </fieldset>
-
-            <input type= "book" value="Book"/>
+            
+            <input type= "submit" value="Book"/>
 	        <input type= "reset" value="Reset Form"/>
  
         </form>
