@@ -1,0 +1,97 @@
+/* ---------- Step 2: Multiple CSS files & menu tweaks ---------- */
+
+/* Undo last week’s hide-on-hover without touching lab04.css */
+aside:hover { display: block; }
+
+/* New menu paragraphs: put them on one line */
+.menu { display: inline-block; }
+
+/* If you ever switch nav to a UL menu, remove bullets */
+nav ul { list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Step 3: Box model (aside, header, footer) ---------- */
+
+/* Aside: border, margin, padding, background */
+aside {
+  /* short-hand border: width style color */
+  border: 3px solid #444;
+  margin: 1em;          /* ems relate to font size */
+  padding: 1em;
+  /* background graphic (fallback colour if image missing) */
+  background-color: #f6f6f6;
+  /* If you have a tile, uncomment the next line and place the file */
+  /* background-image: url("../images/pattern.png"); background-repeat: repeat; */
+}
+
+/* Header formatting */
+header {
+  border: 1px solid darkgray;
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: lightgray;
+  text-align: center;
+}
+
+/* Footer: only a top border, 4px double, your colour */
+footer {
+  border-top: 4px double #336699;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  margin-top: 1em;
+  padding-top: 0.5em;
+}
+
+/* ---------- Step 4: Sizing & positioning boxes (floats, clears) ---------- */
+
+/* Aside width and positioning */
+aside {
+  width: 30%;
+  float: right;
+  box-shadow: 10px 10px 5px #aaaaaa; /* “lift” off page */
+}
+
+/* Float the lists section left */
+#lists { float: left; }
+
+/* Centre the table inside its column */
+table { margin: 0 auto; }
+
+/* Float the tables section right */
+#tables { float: right; }
+
+
+#hyperlinks { clear: both; }
+
+/* Keep the footer at the bottom below all floats */
+footer { clear: both; }
+
+/* Put images section under tables, on the right, with a figure border */
+#images { float: right; }
+figure { border: 2px solid #ccc; padding: 0.5em; }
+
+/* Even up widths and center text in the two columns */
+#lists, #tables, #hyperlinks, #images {
+  width: 48%;
+  text-align: center;
+}
+
+/* Lists themselves should stay left aligned for readability */
+ol, ul, dl { text-align: left; }
+
+/* Maintain legibility on narrow viewports */
+article { min-width: 30em; }
+
+/* ---------- Step 5: Pseudo-class/element selectors in footer ---------- */
+
+/* Line up the three footer paragraphs on one line */
+footer p { 
+  display: inline-block; 
+  width: 33%; 
+  margin: 0; 
+}
+
+/* Position/align each footer paragraph by order */
+footer p:first-child { float: left; text-align: left; }
+footer p:nth-child(2) { text-align: center; float: none; }
+footer p:last-child  { float: right; text-align: right; }
